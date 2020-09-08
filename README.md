@@ -19,7 +19,7 @@
 + 进入 https://classic.yarnpkg.com/zh-Hans/ 往下滚，点击「下载安装程序」，下载后将 yarn 安装到 D:\yarn 或者 C:\yarn 然后一路点击「下一步」即可安装  
 
 ### 5、使用 VSCode 开发
-----
+
 ## 二、使用 Vite 搭建官网  
 
 ### 1、创建项目
