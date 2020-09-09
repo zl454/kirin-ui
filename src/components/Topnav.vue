@@ -1,9 +1,15 @@
 <template>
 <div class="topnav">
-  <a href="/" class="logo"><img src="../images/logo-name.png" alt=""></a>
+  <router-link to="/" class="logo"><img src="../images/logo-name.png" alt=""></router-link>
   <ul class="menu">
     <li><input type="search"></li>
-    <li><a class="nav-link" href="/">主页</a></li>
+    <li>
+      <router-link class="nav-link" to="/doc">文档</router-link>
+    </li>
+    <li>
+      <router-link class="nav-link" to="/">主页</router-link>
+    </li>
+    <li><a class="nav-link" href="https://github.com/zl454">Github</a></li>
   </ul>
   <span class="toggleAside" @click="toggleMenu"></span>
 </div>
@@ -57,7 +63,7 @@ export default {
     flex-wrap: nowrap;
 
     >li {
-      margin: 0 1em;
+      margin: 0 1.2em;
 
       >input {
         cursor: text;
@@ -79,6 +85,10 @@ export default {
           cursor: auto;
           border-color: #3eaf7c;
         }
+      }
+
+      >.nav-link:hover {
+        color: #3eaf7c;
       }
 
       >a {

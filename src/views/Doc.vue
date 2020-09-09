@@ -7,7 +7,9 @@
   </div>
   <div class="content">
     <aside v-if="menuVisible">
-      <h2>组件列表</h2>
+      <h2>关于Kylin-UI</h2>
+      <h2>开发指南</h2>
+      <h2>组件</h2>
       <ol>
         <li>
           <router-link to='/doc/switch'>Switch 组件</router-link>
@@ -62,7 +64,7 @@ export default {
   >.content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: 260px;
 
     @media (max-width: 500px) {
       padding-left: 0;
@@ -80,13 +82,13 @@ export default {
   >main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: #f1f2f6;
   }
 }
 
 aside {
-  background: lightblue;
-  width: 150px;
+  background: #dfe4ea;
+  width: 260px;
   padding: 16px;
   position: fixed;
   top: 0;

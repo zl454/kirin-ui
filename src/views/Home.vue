@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="body">
   <Topnav />
   <main class="home">
     <header class="banner">
@@ -7,7 +7,7 @@
       <h1>Kylin-UI</h1>
       <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
       <p class="actions">
-        <a href="#">GitHub搭建中···</a>
+        <a href="https://github.com/zl454">GitHub</a>
         <router-link to="/doc">get start →</router-link>
       </p>
     </header>
@@ -17,12 +17,12 @@
         <p>极简化设计，注重内部功能实现。</p>
       </div>
       <div class="feature">
-        <h2>Vue 驱动</h2>
-        <p>一款基于 Vue 的 UI 组件库。</p>
+        <h2>Vue3 驱动</h2>
+        <p>一款基于 Vue3 的 UI 组件库，api友好，可用于开发的复杂单页面应用</p>
       </div>
       <div class="feature">
-        <h2>简明优先</h2>
-        <p>自动化测试，保证每个组件质量。</p>
+        <h2>可定制</h2>
+        <p>Kylin UI 自定义主题方式极为优雅，仅需少量代码即可完成主题样式替换</p>
       </div>
     </div>
     <footer>
@@ -46,18 +46,19 @@ export default {
   padding: 4rem 2rem 0;
   max-width: 960px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
   >header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: white;
 
     >img {
       max-width: 100%;
       // max-height: 280px;
-      margin: 120px 0 80px;
+      margin: 100px 0 70px;
     }
 
     >h1 {
@@ -99,7 +100,7 @@ export default {
   >.features {
     border-top: 1px solid #eaecef;
     padding: 2em 0;
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -128,6 +129,7 @@ export default {
   }
 
   >footer {
+    flex-grow: 1;
     padding: 2.5rem;
     border-top: 1px solid #eaecef;
     text-align: center;
