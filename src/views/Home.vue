@@ -58,12 +58,12 @@ export default {
     >img {
       max-width: 100%;
       // max-height: 280px;
-      margin: 100px 0 70px;
+      margin: 80px 0 70px;
     }
 
     >h1 {
       font-size: 3rem;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       font-weight: bold;
     }
 
@@ -140,7 +140,7 @@ export default {
 
   >footer {
     flex-grow: 1;
-    padding: 2.5rem;
+    padding: 1.5rem 0 0.5rem;
     border-top: 1px solid #eaecef;
     text-align: center;
     color: #4e6e8e;
