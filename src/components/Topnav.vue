@@ -1,16 +1,19 @@
 <template>
 <div class="topnav">
   <router-link to="/" class="logo"><img src="../images/logo-name.png" alt=""></router-link>
-  <ul class="menu">
+  <ul class="menu" :class="menuBool?'moobile-menu':''">
     <li><input type="search"></li>
     <li>
-      <router-link class="nav-link" to="/doc">文档</router-link>
+      <router-link @click="openHomeMenu" class="nav-link" to="/doc">文档</router-link>
     </li>
     <li>
-      <router-link class="nav-link" to="/">主页</router-link>
+      <router-link @click="openHomeMenu" class="nav-link" to="/">主页</router-link>
     </li>
     <li><a class="nav-link" href="https://github.com/zl454">Github</a></li>
   </ul>
+  <svg @click="openHomeMenu" viewBox="64 64 896 896" focusable="false" class="svg" data-icon="unordered-list" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+    <path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path>
+  </svg>
   <span class="toggleAside" @click="toggleMenu"></span>
 </div>
 </template>
@@ -18,6 +21,7 @@
 <script lang="ts">
 import {
   inject,
+  ref,
   Ref
 } from "vue";
 export default {
@@ -26,7 +30,14 @@ export default {
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
+    const menuBool = ref(true);
+    const openHomeMenu = () => {
+      menuBool.value = !menuBool.value;
+      console.log(menuBool.value);
+    };
     return {
+      menuBool,
+      openHomeMenu,
       toggleMenu,
     };
   },
@@ -98,6 +109,11 @@ export default {
     }
   }
 
+  >.svg {
+    margin-right: 1rem;
+    display: none;
+  }
+
   >.toggleAside {
     width: 24px;
     height: 24px;
@@ -111,7 +127,34 @@ export default {
 
   @media (max-width: 500px) {
     >.menu {
+      position: fixed;
+      top: 75px;
+      right: 0.5rem;
+      padding: 0.5rem 0;
+      background: rgb(240, 235, 235);
+      box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+        0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      >li {
+        padding: 0 1rem;
+        line-height: 3em;
+
+        input {
+          width: 5rem;
+        }
+      }
+    }
+
+    >.moobile-menu {
       display: none;
+    }
+
+    >.svg {
+      display: block;
     }
 
     >.logo {
