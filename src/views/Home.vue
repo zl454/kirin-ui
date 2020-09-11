@@ -99,19 +99,19 @@ export default {
 
   >.features {
     border-top: 1px solid #eaecef;
-    padding: 2em 0;
+    padding: 2em;
     margin-top: 3rem;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     align-content: stretch;
 
     >.feature {
-      flex-grow: 1;
-      flex-basis: 30%;
-      max-width: 30%;
+      margin-bottom: 3rem;
 
+      // flex-grow: 1;
       >h2 {
         font-size: 1.4rem;
         font-weight: bold;
@@ -124,6 +124,16 @@ export default {
 
       >p {
         color: #3a5169;
+      }
+    }
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+
+      >.feature {
+        flex-grow: 1;
+        flex-basis: 30%;
+        max-width: 30%;
       }
     }
   }
