@@ -1,8 +1,8 @@
 <template>
 <div class="kylin-tabs">
   <div class="kylin-tabs-nav">
-    <div class="kylin-tabs-nav-item" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index" @click="select(t)">{{t}}</div>
-    <div class="kylin-tabs-nav-indicator"></div>
+    <div class="kylin-tabs-nav-item" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index" :ref="el=>{if (el) navItems[index] =el}" @click="select(t)">{{t}}</div>
+    <div class="kylin-tabs-nav-indicator" ref="indicator"></div>
   </div>
   <div class="kylin-tabs-content">
     <component class="kylin-tabs-content-item" :class="{selected:c.props.title===selected}" v-for="(c,index) in defaults" :is="c" :key="index" />
@@ -11,6 +11,10 @@
 </template>
 
 <script lang="ts">
+import {
+  onMounted,
+  ref
+} from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
@@ -19,6 +23,18 @@ export default {
     },
   },
   setup(props, context) {
+    const navItems = ref < HTMLDivElement[] > ([]);
+    const indicator = ref < HTMLDivElement[] > (null);
+    onMounted(() => {
+      const divs = navItems.value;
+      const result = divs.filter((div) =>
+        div.classList.contains("selected")
+      )[0];
+      const {
+        width
+      } = result.getBoundingClientRect();
+      indicator.value.style.width = width + "px";
+    });
     const defaults = context.slots.default();
     const select = (title: String) => {
       context.emit("update:selected", title);
@@ -32,9 +48,11 @@ export default {
       }
     });
     return {
+      navItems,
       titles,
       defaults,
       select,
+      indicator,
     };
   },
 };
