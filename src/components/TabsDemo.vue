@@ -7,6 +7,7 @@
     <Tab title="导航3">内容3</Tab>
     <Tab title="导航4">内容4</Tab>
   </Tabs>
+
 </div>
 </template>
 
@@ -24,7 +25,7 @@ export default {
   setup() {
     const x = ref("导航1");
     return {
-      x
+      x,
     };
   },
 };

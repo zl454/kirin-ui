@@ -5,13 +5,15 @@
     <div class="kylin-tabs-nav-indicator" ref="indicator"></div>
   </div>
   <div class="kylin-tabs-content">
-    <component class="kylin-tabs-content-item" :class="{selected:c.props.title===selected}" v-for="(c,index) in defaults" :is="c" :key="index" />
+    <!-- <component class="kylin-tabs-content-item" :class="{selected:c.props.title===selected}" v-for="(c,index) in defaults" :is="c" :key="index" /> -->
+    <component :is="current" :key="current.props.title" />
   </div>
 </div>
 </template>
 
 <script lang="ts">
 import {
+  computed,
   onMounted,
   ref,
   watchEffect
@@ -44,6 +46,9 @@ export default {
       });
     });
     const defaults = context.slots.default();
+    const current = computed(() => {
+      return defaults.find((tag) => tag.props.title === props.selected);
+    });
     const select = (title: String) => {
       context.emit("update:selected", title);
     };
@@ -57,6 +62,7 @@ export default {
     });
     return {
       titles,
+      current,
       defaults,
       select,
       indicator,
@@ -106,14 +112,6 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
-
-    &-item {
-      display: none;
-
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
