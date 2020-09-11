@@ -21,6 +21,7 @@
 <script lang="ts">
 import {
   inject,
+  onMounted,
   ref,
   Ref
 } from "vue";
@@ -33,8 +34,19 @@ export default {
     const menuBool = ref(true);
     const openHomeMenu = () => {
       menuBool.value = !menuBool.value;
-      console.log(menuBool.value);
     };
+    let flag = false;
+    const menuShow = onMounted(() => {
+      document.addEventListener("click", (e) => {
+        if (document.getElementsByClassName("svg")[0].contains(e.target))
+          return;
+        flag = document.getElementsByClassName("menu")[0].contains(e.target);
+
+        if (!flag) {
+          menuBool.value = true;
+        }
+      });
+    });
     return {
       menuBool,
       openHomeMenu,
