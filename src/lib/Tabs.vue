@@ -2,6 +2,7 @@
 <div class="kylin-tabs">
   <div class="kylin-tabs-nav">
     <div class="kylin-tabs-nav-item" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index" @click="select(t)">{{t}}</div>
+    <div class="kylin-tabs-nav-indicator"></div>
   </div>
   <div class="kylin-tabs-content">
     <component class="kylin-tabs-content-item" :class="{selected:c.props.title===selected}" v-for="(c,index) in defaults" :is="c" :key="index" />
@@ -46,6 +47,7 @@ $border-color: #d9d9d9;
 
 .kylin-tabs {
   &-nav {
+    position: relative;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
@@ -62,6 +64,15 @@ $border-color: #d9d9d9;
       &.selected {
         color: $blue;
       }
+    }
+
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
     }
   }
 
