@@ -9,7 +9,7 @@
     <li>
       <router-link @click="openHomeMenu" class="nav-link" to="/">主页</router-link>
     </li>
-    <li><a class="nav-link" href="https://github.com/zl454">Github</a></li>
+    <li><a class="nav-link" href="https://github.com/zl454" target="_blank">Github</a></li>
   </ul>
   <svg @click="openHomeMenu" viewBox="64 64 896 896" focusable="false" class="svg" data-icon="unordered-list" width="1em" height="1em" fill="currentColor" aria-hidden="true">
     <path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path>

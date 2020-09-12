@@ -7,10 +7,16 @@
   </div>
   <div class="content">
     <aside v-if="menuVisible">
-      <h2>关于Kylin-UI</h2>
+      <!--<h2>关于Kylin-UI</h2>
       <h2>开发指南</h2>
-      <h2>组件</h2>
+      <h2>组件</h2>-->
       <ol>
+        <li>
+          <router-link to='/doc/introduce'>kylin-ui 简介</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/guide'>安装指南</router-link>
+        </li>
         <li>
           <router-link to='/doc/switch'>Switch 组件</router-link>
         </li>
