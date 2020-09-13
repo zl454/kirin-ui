@@ -100,11 +100,16 @@ $grey: rgb(112, 112, 112);
 
   &[disabled] {
     cursor: not-allowed;
-    background: grey;
+    background: rgba(128, 128, 128, 0.3);
 
-    >span {
-      pointer-events: none;
+    &:active>span {
+      left: 2px;
+      width: $h2;
     }
+  }
+
+  &.kylin-size-big {
+    $h: 44px;
   }
 }
 </style>
