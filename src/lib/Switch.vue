@@ -1,5 +1,5 @@
 <template>
-<button class="kylin-switch" :class="{'kylin-checked':checked}" @click="toggle" :disabled="disabled"><span></span></button>
+<button class="kylin-switch" :class="[{'kylin-checked':checked},classes]" @click="toggle" :disabled="disabled"><span></span></button>
 </template>
 
 <script lang="ts">
@@ -9,10 +9,6 @@ import {
 } from "vue";
 export default {
   props: {
-    theme: {
-      type: String,
-      default: "button",
-    },
     size: {
       type: String,
       default: "normal",
@@ -32,7 +28,6 @@ export default {
   },
   setup(props, context) {
     const {
-      theme,
       size,
       level
     } = props;
@@ -42,7 +37,6 @@ export default {
     };
     const classes = computed(() => {
       return {
-        [`kylin-theme-${theme}`]: theme,
         [`kylin-size-${size}`]: size,
         [`kylin-level-${level}`]: level,
       };
