@@ -1,21 +1,54 @@
 <template>
-<button class="kylin-switch" :class="{'kylin-checked':checked}" @click="toggle"><span></span></button>
+<button class="kylin-switch" :class="{'kylin-checked':checked}" @click="toggle" :disabled="disabled"><span></span></button>
 </template>
 
 <script lang="ts">
 import {
+  computed,
   ref
 } from "vue";
 export default {
   props: {
-    checked: Boolean,
+    theme: {
+      type: String,
+      default: "button",
+    },
+    size: {
+      type: String,
+      default: "normal",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
+    const {
+      theme,
+      size,
+      level
+    } = props;
     const toggle = () => {
       // checked 开关选中状态事件
       context.emit("update:checked", !props.checked);
     };
+    const classes = computed(() => {
+      return {
+        [`kylin-theme-${theme}`]: theme,
+        [`kylin-size-${size}`]: size,
+        [`kylin-level-${level}`]: level,
+      };
+    });
     return {
+      classes,
       toggle,
     };
   },
@@ -25,6 +58,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
+$grey: rgb(112, 112, 112);
 
 .kylin-switch {
   height: $h;
@@ -67,6 +101,15 @@ $h2: $h - 4px;
     >span {
       width: $h2 + 4px;
       margin-left: -4px;
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background: grey;
+
+    >span {
+      pointer-events: none;
     }
   }
 }

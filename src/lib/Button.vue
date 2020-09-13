@@ -1,14 +1,19 @@
 <template>
-<button class="kylin-button" :class="classes" :disabled="disabled">
-  <span v-if="loading" class="kylin-loadingIdicator"></span>
-  <slot />
-</button>
+  <button
+    class="kylin-button"
+    :class="classes"
+    :disabled="disabled"
+  >
+    <span
+      v-if="loading"
+      class="kylin-loadingIdicator"
+    ></span>
+    <slot />
+  </button>
 </template>
 
 <script>
-import {
-  computed
-} from "vue";
+import { computed } from "vue";
 export default {
   props: {
     theme: {
@@ -33,11 +38,7 @@ export default {
     },
   },
   setup(props) {
-    const {
-      theme,
-      size,
-      level
-    } = props;
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
         [`kylin-theme-${theme}`]: theme,
@@ -77,7 +78,7 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
 
-  &+& {
+  & + & {
     margin-left: 8px;
   }
 
@@ -205,7 +206,7 @@ $grey: grey;
     }
   }
 
-  >.kylin-loadingIndicator {
+  > .kylin-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
