@@ -50,66 +50,84 @@ export default {
 </script>
 
 <style lang="scss">
-$h: 22px;
-$h2: $h - 4px;
 $grey: rgb(112, 112, 112);
 
 .kylin-switch {
-  height: $h;
-  width: $h * 2;
   border: none;
   background: gray;
-  border-radius: $h/2;
   position: relative;
 
   >span {
     position: absolute;
     top: 2px;
     left: 2px;
-    height: $h2;
-    width: $h2;
+
     background: white;
-    border-radius: $h2/2;
     transition: left 250ms;
   }
 
   &.kylin-checked {
     background: blue;
-
-    >span {
-      left: calc(100% - #{$h2} - 2px);
-    }
   }
 
   &:focus {
     outline: none;
   }
 
-  &:active {
+  @mixin switchSize($h) {
+    $h2: $h - 4px;
+    height: $h;
+    width: $h * 2;
+    border-radius: $h/2;
+
     >span {
-      width: $h2 + 4px;
-    }
-  }
-
-  &.kylin-checked:active {
-    >span {
-      width: $h2 + 4px;
-      margin-left: -4px;
-    }
-  }
-
-  &[disabled] {
-    cursor: not-allowed;
-    background: rgba(128, 128, 128, 0.3);
-
-    &:active>span {
-      left: 2px;
+      height: $h2;
       width: $h2;
+      border-radius: $h2/2;
     }
+
+    &.kylin-checked>span {
+      left: calc(100% - #{$h2} - 2px);
+    }
+
+    &:active {
+      >span {
+        width: $h2 + 4px;
+      }
+    }
+
+    &.kylin-checked:active {
+      >span {
+        width: $h2 + 4px;
+        margin-left: -4px;
+      }
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      background: rgba(128, 128, 128, 0.3);
+
+      &:active>span {
+        left: 2px;
+        width: $h2;
+      }
+    }
+
+    &.kylin-size-big {
+      $h: 44px;
+    }
+  }
+
+  &.kylin-size-normal {
+    @include switchSize(22px);
+  }
+
+  &.kylin-size-small {
+    @include switchSize(16px);
   }
 
   &.kylin-size-big {
-    $h: 44px;
+    @include switchSize(36px);
   }
 }
 </style>
