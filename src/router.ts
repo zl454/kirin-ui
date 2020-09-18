@@ -19,7 +19,7 @@ export const router = createRouter({
         { path: '', component: DocDemo },
         { path: 'introduce', component: Introduce },
         { path: 'install', component: Install },
-        { path: 'getstart', component: GetStart },
+        { path: 'get-start', component: GetStart },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
         { path: 'dialog', component: DialogDemo },

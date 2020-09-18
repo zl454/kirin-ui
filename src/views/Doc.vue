@@ -18,7 +18,7 @@
           <router-link to='/doc/install'>安装指南</router-link>
         </li>
         <li>
-          <router-link to='/doc/getstart'>开始使用</router-link>
+          <router-link to='/doc/get-start'>开始使用</router-link>
         </li>
         <li>
           <router-link to='/doc/switch'>Switch 组件</router-link>
@@ -61,10 +61,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.router-link-active {
-  text-decoration: underline;
-}
-
 .layout {
   display: flex;
   flex-direction: column;
@@ -77,7 +73,7 @@ export default {
   >.content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 260px;
+    padding-left: 156px;
 
     @media (max-width: 500px) {
       padding-left: 0;
@@ -101,8 +97,8 @@ export default {
 
 aside {
   background: #dfe4ea;
-  width: 260px;
-  padding: 16px;
+  width: 150px;
+  padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -115,7 +111,15 @@ aside {
 
   >ol {
     >li {
-      padding: 4px 0;
+      a {
+        display: block;
+        padding: 4px 16px;
+        text-decoration: none;
+      }
+
+      .router-link-active {
+        background: white;
+      }
     }
   }
 }
