@@ -53,6 +53,77 @@
 - Vue 3 有 createApp()，而 Vue 2 的是 new Vue()
 - createApp(组件)，new Vue({template,render})
    
-### 3、安装并初始化 vue-router
+### 3、安装并初始化 vue-router4
+- 安装 vue-router4  
+```
+运行 npm info vue-router version 查询版本
+运行 npm insall vue-router@4.0.0-beta.3 安装vue-router4
+```
+- 初始化 vue-router
+```JavaScript
+// router.ts 文件
+//引入 history 对象，引入 router 对象
+import { createWebHashHistory, createRouter } from "vue-router"
+//引入 Hone、Doc、DocDemo 组件
+import Home from './components/Home.vue'
+import Doc from './components/Doc.vue'
+import DocDemo from './components/DocDemo.vue'
+//创建 history 对象，hash模式
+const history = createWebHashHistory()
+//创建 router 对象
+export const router = createRouter({
+  history: history,
+  routes: [
+    //根路径路由，显示 Home 组件
+    { path: '/', component: Home },
+    {
+      // 创建路径'/doc'和他的子路径
+      path: '/doc', component: Doc, children: [
+        { path: '', component: DocDemo },
+      ]
+      }
+  ]
+})
+```
+```JavaScript
+// main.ts 文件
+import { createApp } from 'vue'
+import App from './App.vue'
+import { router } from './router'
 
-- 建立路由
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
+```
+新建 `shims-vue.ts` 让 `TS` 能够解析 `vue` 文件
+```JavaScript
+// shims-vue.ts 文件
+declare module '*vue' {
+  import { ComponentOptions } from "vue"
+  const Componentoptions: ComponentOptions
+  export default Componentoptions
+}
+```
+- 添加`<router-view>`   
+显示路由组件的区域
+- 添加`<router-link>`   
+路由跳转链接
+
+### 4、安装 SASS
+> `npm install sass -D` 安装sass到生产依赖  
+
+**-S、-D、-g 的区别**
+
+`npm i module_name  -S`  = >  `npm install module_name --save`    写入到 `dependencies` 对象
+
+`npm i module_name  -D`  => `npm install module_name --save-dev`   写入到 `devDependencies` 对象
+
+`npm i module_name  -g`  全局安装
+
+### 6、封装 TopNav 并引入到 Home 与 Doc 中
+### 7、在 Doc 中创建侧边栏并实现点击切换功能
+使用 `provie` 与 `inject` 实现切换功能 [Vue 依赖注入 - Provide/Inject](https://www.jianshu.com/p/6651dccd282c)
+### 8、封装 TopNav
+### 9、适配手机样式
+### 10、侧边栏路由间组件切换
+### 11、官网完成
