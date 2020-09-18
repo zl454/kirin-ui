@@ -15,7 +15,10 @@
           <router-link to='/doc/introduce'>kylin-ui 简介</router-link>
         </li>
         <li>
-          <router-link to='/doc/guide'>安装指南</router-link>
+          <router-link to='/doc/install'>安装指南</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/getstart'>开始使用</router-link>
         </li>
         <li>
           <router-link to='/doc/switch'>Switch 组件</router-link>
@@ -58,6 +61,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-active {
+  text-decoration: underline;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
