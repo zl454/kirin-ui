@@ -1,7 +1,33 @@
 <template>
 <div>
-  <h2>基础用法</h2>
-  <Switch v-model:checked="checkedBool1" />
+  <h1>Switch 组件演示</h1>
+  <div class="demo">
+    <h2>常规用法</h2>
+    <div class="demo-component">
+      <Switch v-model:value="bool" />
+    </div>
+    <div class="demo-actions">
+      <Button>查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+    </div>
+  </div>
+  <div class="demo">
+    <h2>支持 disabled</h2>
+    <div class="demo-component">
+      <Switch v-model:value="bool" disabled />
+    </div>
+    <div class="demo-actions">
+      <Button>查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+    </div>
+  </div>
+</div>
+<!--
+  </div>
   <h2>禁用状态</h2>
   <Switch v-model:checked="checkedBool2" disabled />
   <h2>自定义大小</h2>
@@ -11,9 +37,9 @@
   <Switch v-model:checked="checkedBool3" />
   小
   <Switch v-model:checked="checkedBool3" size="small" />
-  <!--<h2>自定义颜色</h2>
-  <Switch v-model:checked="checkedBool4" color="red" />-->
-</div>
+  <h2>自定义颜色</h2>
+  <Switch v-model:checked="checkedBool4" color="red" />
+
 <h2>API</h2>
 <h3>props</h3>
 <table class="kylin-table">
@@ -40,14 +66,14 @@
     <td>开关尺寸，默认单位为px</td>
     <td>nubmer | string</td>
     <td>normal | big | small </td>
-  </tr>
-  <!--<tr>
+  </tr>-->
+<!--<tr>
       <td>level</td>
       <td>开关打开时的背景颜色</td>
       <td>string</td>
       <td>#40a9ff</td>
-    </tr>-->
-</table>
+    </tr>
+</table>-->
 </template>
 
 <script lang="ts">
@@ -55,39 +81,52 @@ import {
   ref
 } from "vue";
 import Switch from "../lib/Switch.vue";
+import Button from "../lib/Button.vue";
 export default {
   components: {
     Switch,
+    Button,
   },
   setup() {
-    const checkedBool1 = ref(false);
-    const checkedBool2 = ref(false);
-    const checkedBool3 = ref(false);
-    const checkedBool4 = ref(false);
+    const bool = ref(false);
     return {
-      checkedBool1,
-      checkedBool2,
-      checkedBool3,
-      checkedBool4,
+      bool,
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.kylin-table {
-  border-collapse: collapse;
-  border: 1px solid #000;
+$border-color: #d9d9d9;
 
-  th {
-    border: 1px solid #000;
-    padding: 5px 10px;
+.demo {
+  border: 1px solid $border-color;
+  margin: 16px 0 32px;
+
+  >h2 {
+    font-size: 20px;
+    padding: 8px 16px;
+    border-bottom: 1px solid $border-color;
   }
 
-  td {
-    text-align: center;
-    padding: 5px 10px;
-    border: 1px solid #000;
+  &-component {
+    padding: 16px;
+  }
+
+  &-actions {
+    padding: 8px 16px;
+    border-top: 1px dashed $border-color;
+  }
+
+  &-code {
+    padding: 8px 16px;
+    border-top: 1px dashed $border-color;
+
+    >pre {
+      line-height: 1.1;
+      font-family: Consolas, "Courier New", Courier, monospace;
+      margin: 0;
+    }
   }
 }
 </style>

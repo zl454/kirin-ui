@@ -1,5 +1,5 @@
 <template>
-<button class="kylin-switch" :class="[{'kylin-checked':checked},classes]" @click="toggle" :disabled="disabled"><span></span></button>
+<button class="kylin-switch" :class="[{'kylin-value':value},classes]" @click="toggle" :disabled="disabled"><span></span></button>
 </template>
 
 <script lang="ts">
@@ -17,7 +17,7 @@ export default {
       type: String,
       default: "normal",
     },
-    checked: {
+    value: {
       type: Boolean,
       default: false,
     },
@@ -33,7 +33,7 @@ export default {
     } = props;
     const toggle = () => {
       // checked 开关选中状态事件
-      context.emit("update:checked", !props.checked);
+      context.emit("update:value", !props.value);
     };
     const classes = computed(() => {
       return {
@@ -66,7 +66,7 @@ $grey: rgb(112, 112, 112);
     transition: left 250ms;
   }
 
-  &.kylin-checked {
+  &.kylin-value {
     background: blue;
   }
 
@@ -86,7 +86,7 @@ $grey: rgb(112, 112, 112);
       border-radius: $h2/2;
     }
 
-    &.kylin-checked>span {
+    &.kylin-value>span {
       left: calc(100% - #{$h2} - 2px);
     }
 
@@ -96,7 +96,7 @@ $grey: rgb(112, 112, 112);
       }
     }
 
-    &.kylin-checked:active {
+    &.kylin-value:active {
       >span {
         width: $h2 + 4px;
         margin-left: -4px;
