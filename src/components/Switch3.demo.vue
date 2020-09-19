@@ -2,12 +2,11 @@
   改变大小
 </demo>
 <template>
-大：
-<Switch v-model:value="bool" size="big" />
-默认：
-<Switch v-model:value="bool" />
-小：
-<Switch v-model:value="bool" size="small" />
+<div>
+  <Switch v-model:value="bool" size="big" />
+  <Switch v-model:value="bool" />
+  <Switch v-model:value="bool" size="small" />
+</div>
 </template>
 
 <script lang="ts">

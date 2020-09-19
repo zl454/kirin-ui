@@ -57,6 +57,10 @@ $grey: rgb(112, 112, 112);
   background: gray;
   position: relative;
 
+  &+& {
+    margin-left: 8px;
+  }
+
   >span {
     position: absolute;
     top: 2px;
