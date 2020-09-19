@@ -4,6 +4,9 @@
   <Demo :component="Switch1Demo" />
   <Demo :component="Switch2Demo" />
   <Demo :component="Switch3Demo" />
+  <div>
+    下一节：<a href="#/doc/button">Button 组件</a>
+  </div>
 </div>
 <!--
   </div>

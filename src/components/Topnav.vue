@@ -11,10 +11,14 @@
     </li>
     <li><a class="nav-link" href="https://github.com/zl454" target="_blank">Github</a></li>
   </ul>
-  <svg @click="openHomeMenu" viewBox="64 64 896 896" focusable="false" class="svg" data-icon="unordered-list" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-    <path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path>
+
+  <svg @click="openHomeMenu" t="1600534030757" class="svg" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2869" width="1em" height="1em">
+    <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="#181818" p-id="2870"></path>
   </svg>
-  <span class="toggleAside" @click="toggleMenu"></span>
+
+  <svg @click="toggleMenu" t="1600533797098" class="toggleAside" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2610" width="1em" height="1em">
+    <path d="M768 832a64 64 0 1 1 0.032-128.032A64 64 0 0 1 768 832m-448-64a64 64 0 1 1-128.032-0.032A64 64 0 0 1 320 768m128-512a64 64 0 1 1 128.032 0.032A64 64 0 0 1 448 256m352 388.544V480h-256v-100.544c55.072-14.304 96-64 96-123.456 0-70.592-57.44-128-128-128-70.592 0-128 57.408-128 128 0 59.456 40.928 109.152 96 123.456V480H224V644.544c-55.072 14.304-96 64-96 123.456 0 70.592 57.408 128 128 128 70.56 0 128-57.408 128-128 0-59.456-40.928-109.152-96-123.456V544h448v100.544c-55.072 14.304-96 64-96 123.456 0 70.592 57.408 128 128 128 70.56 0 128-57.408 128-128 0-59.456-40.928-109.152-96-123.456" fill="#000000" p-id="2611"></path>
+  </svg>
 </div>
 </template>
 
@@ -38,7 +42,6 @@ export default {
     let flag = false;
     const menuShow = onMounted(() => {
       document.addEventListener("click", (e) => {
-        console.log(e.target as HTMLElement);
         if (
           document
           .getElementsByClassName("svg")[0]
@@ -130,14 +133,14 @@ export default {
 
   >.svg {
     margin-right: 1rem;
+
+    cursor: pointer;
     display: none;
   }
 
   >.toggleAside {
-    width: 24px;
-    height: 24px;
-    background: red;
     position: absolute;
+    cursor: pointer;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);

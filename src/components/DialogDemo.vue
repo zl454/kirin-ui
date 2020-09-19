@@ -2,6 +2,9 @@
 <h1>Dialog 示例</h1>
 <Demo :component="Dialog1Demo" />
 <Demo :component="Dialog2Demo" />
+<div>
+  下一节：<a href="#/doc/tabs">Tabs 组件</a>
+</div>
 </template>
 
 <script lang="ts">
