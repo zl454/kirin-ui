@@ -7,9 +7,6 @@
   </div>
   <div class="content">
     <aside v-if="menuVisible">
-      <!--<h2>关于Kylin-UI</h2>
-      <h2>开发指南</h2>
-      <h2>组件</h2>-->
       <ol>
         <li>
           <router-link to='/doc/introduce'>kylin-ui 简介</router-link>

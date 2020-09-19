@@ -7,7 +7,7 @@
       <h1>Kylin-UI</h1>
       <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
       <p class="actions">
-        <a href="https://github.com/zl454">GitHub</a>
+        <a href="https://github.com/zl454" target="_blank">GitHub</a>
         <router-link to="/doc">get start →</router-link>
       </p>
     </header>

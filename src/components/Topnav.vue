@@ -4,7 +4,7 @@
   <ul class="menu" :class="menuBool?'moobile-menu':''">
     <li><input type="search"></li>
     <li>
-      <router-link @click="openHomeMenu" class="nav-link" to="/doc">文档</router-link>
+      <router-link @click="openHomeMenu" class="nav-link" to="/doc/introduce">文档</router-link>
     </li>
     <li>
       <router-link @click="openHomeMenu" class="nav-link" to="/">主页</router-link>
@@ -38,9 +38,16 @@ export default {
     let flag = false;
     const menuShow = onMounted(() => {
       document.addEventListener("click", (e) => {
-        if (document.getElementsByClassName("svg")[0].contains(e.target))
+        console.log(e.target as HTMLElement);
+        if (
+          document
+          .getElementsByClassName("svg")[0]
+          .contains(e.target as HTMLElement)
+        )
           return;
-        flag = document.getElementsByClassName("menu")[0].contains(e.target);
+        flag = document
+          .getElementsByClassName("menu")[0]
+          .contains(e.target as HTMLElement);
 
         if (!flag) {
           menuBool.value = true;
