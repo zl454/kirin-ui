@@ -5,7 +5,6 @@
     <div class="kylin-tabs-nav-indicator" ref="indicator"></div>
   </div>
   <div class="kylin-tabs-content">
-    <!-- <component class="kylin-tabs-content-item" :class="{selected:c.props.title===selected}" v-for="(c,index) in defaults" :is="c" :key="index" /> -->
     <component :is="current" :key="current.props.title" />
   </div>
 </div>
