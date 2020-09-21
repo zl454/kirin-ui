@@ -32,7 +32,9 @@
       </ol>
     </aside>
     <main>
-      <router-view></router-view>
+      <section>
+        <router-view></router-view>
+      </section>
     </main>
   </div>
 </div>
@@ -70,7 +72,7 @@ export default {
   >.content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: 255px;
 
     @media (max-width: 500px) {
       padding-left: 0;
@@ -88,13 +90,18 @@ export default {
   >main {
     flex-grow: 1;
     padding: 16px;
-    background: #f1f2f6;
+    background: #fff;
+
+    >section {
+      margin: 20px auto;
+      max-width: 912px;
+    }
   }
 }
 
 aside {
-  background: #dfe4ea;
-  width: 150px;
+  background: #fafafa;
+  width: 255px;
   padding: 16px 0;
   position: fixed;
   top: 0;
@@ -111,12 +118,16 @@ aside {
     >li {
       a {
         display: block;
-        padding: 4px 16px;
+        padding: 8px 16px;
         text-decoration: none;
       }
 
       .router-link-active {
-        background: white;
+        background: #e0e0e0;
+      }
+
+      a:hover {
+        background: #efefef;
       }
     }
   }
