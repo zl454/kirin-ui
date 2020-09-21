@@ -79,6 +79,8 @@ export default {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #eaecef;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08);
 
   >.logo {
     max-width: 6em;

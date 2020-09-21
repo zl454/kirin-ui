@@ -122,10 +122,12 @@ aside {
         display: block;
         padding: 8px 16px;
         text-decoration: none;
+        color: rgba(0, 0, 0, 0.87);
       }
 
       .router-link-active {
         background: #e0e0e0;
+        color: #2196f3;
       }
 
       a:hover {
