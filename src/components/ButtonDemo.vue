@@ -21,34 +21,40 @@
     <tbody>
 
       <tr>
-        <td>v-model</td>
-        <td>开关选中状态</td>
-        <td>boolean</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>disabled</td>
-        <td>是否为禁用状态</td>
-        <td>boolean</td>
-        <td>false</td>
+        <td>theme</td>
+        <td>按钮的主题</td>
+        <td>string</td>
+        <td>button</td>
       </tr>
       <tr>
         <td>size</td>
-        <td>开关尺寸，默认单位为px</td>
-        <td>nubmer | string</td>
-        <td>normal | big | small </td>
+        <td>按钮的大小</td>
+        <td>string</td>
+        <td>normal</td>
       </tr>
       <tr>
         <td>level</td>
-        <td>开关打开时的背景颜色</td>
+        <td>按钮的颜色</td>
         <td>string</td>
-        <td>#40a9ff</td>
+        <td>normal</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>按钮是否为禁用状态</td>
+        <td>boolean</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>loading</td>
+        <td>按钮是否在加载中</td>
+        <td>boolean</td>
+        <td>false</td>
       </tr>
     </tbody>
   </table>
-  <div>
+  <p>
     下一节：<a href="#/doc/dialog">Dialog 组件</a>
-  </div>
+  </p>
 </div>
 </template>
 
@@ -93,7 +99,7 @@ h2 {
 }
 
 p {
-  margin: 0 0 16px;
+  margin: 16px 0;
 }
 
 .props {
@@ -135,6 +141,7 @@ table {
         padding-right: 24px;
         text-align: left;
         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.87);
       }
     }
   }
