@@ -1,5 +1,5 @@
 <demo>
-常规使用
+示例
 </demo>
 <template>
 <div>
@@ -17,8 +17,8 @@
 </template>
 
 <script lang="ts">
-import Dialog from "../lib/Dialog.vue";
-import Button from "../lib/Button.vue";
+import Dialog from "../../lib/Dialog.vue";
+import Button from "../../lib/Button.vue";
 import {
   ref
 } from "vue";

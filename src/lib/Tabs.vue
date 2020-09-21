@@ -1,6 +1,6 @@
 <template>
 <div class="kylin-tabs">
-  <div class="kylin-tabs-nav" ref="container">
+  <div class="kylin-tabs-nav" :class='{"kylin-tabs-center":center,"kylin-tabs-full-width":fullWidth}' ref="container">
     <div class="kylin-tabs-nav-item" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index" :ref="el=>{if (t===selected) selectedItem =el}" @click="select(t)">{{t}}</div>
     <div class="kylin-tabs-nav-indicator" ref="indicator"></div>
   </div>
@@ -22,6 +22,14 @@ export default {
   props: {
     selected: {
       type: String,
+    },
+    center: {
+      type: Boolean,
+      default: false,
+    },
+    fullWidth: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props, context) {
@@ -107,6 +115,14 @@ $border-color: #d9d9d9;
       width: 100px;
       transition: all 250ms;
     }
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-full-width {
+    justify-content: space-around;
   }
 
   &-content {

@@ -1,19 +1,15 @@
 <demo>
-  改变大小
+  支持 disabled
 </demo>
 <template>
-<div>
-  <Switch v-model:value="bool" size="big" />
-  <Switch v-model:value="bool" />
-  <Switch v-model:value="bool" size="small" />
-</div>
+<Switch v-model:value="bool" disabled />
 </template>
 
 <script lang="ts">
 import {
   ref
 } from "vue";
-import Switch from "../lib/Switch.vue";
+import Switch from "../../lib/Switch.vue";
 export default {
   components: {
     Switch,
