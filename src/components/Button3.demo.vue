@@ -1,5 +1,5 @@
 <demo>
-支持 level
+不同的颜色
 </demo>
 <template>
 <div>

@@ -84,6 +84,19 @@ export default {
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 
+h1 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eaecef;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;

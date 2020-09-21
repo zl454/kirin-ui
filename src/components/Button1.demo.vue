@@ -1,11 +1,11 @@
 <demo>
-常规使用
+不同的主题
 </demo>
 <template>
 <div>
-  <Button>普通按钮</Button>
-  <Button theme="link">链接按钮</Button>
-  <Button theme="text">文字按钮</Button>
+  <Button>button</Button>
+  <Button theme="link">link</Button>
+  <Button theme="text">text</Button>
 </div>
 </template>
 

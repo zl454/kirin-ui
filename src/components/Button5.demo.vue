@@ -1,9 +1,9 @@
 <demo>
-支持显示加载中
+加载状态
 </demo>
 <template>
-  <Button loading>加载中</Button>
-  <Button>加载完毕</Button>
+<Button loading>加载中</Button>
+<Button>加载完毕</Button>
 </template>
 
 <script lang="ts">
