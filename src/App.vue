@@ -19,11 +19,7 @@ export default {
     provide("menuVisible", menuVisible);
     const getMenuVisible = () => {
       const width = document.documentElement.clientWidth;
-      if (width <= 500) {
-        menuVisible.value = false;
-      } else {
-        menuVisible.value = true;
-      }
+      menuVisible.value = width <= 500 ? false : true;
     };
     router.afterEach(() => {
       getMenuVisible();
