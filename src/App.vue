@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import {
+  onMounted,
   provide,
   ref
 } from "vue";
@@ -17,9 +18,22 @@ export default {
     const menuVisible = ref(width <= 500 ? false : true);
     provide("menuVisible", menuVisible);
     router.afterEach(() => {
+      const width = document.documentElement.clientWidth;
       if (width <= 500) {
         menuVisible.value = false;
       }
+      console.log("router改变：" + menuVisible.value + ",width:" + width);
+    });
+    onMounted(() => {
+      window.onresize = () => {
+        const width = document.documentElement.clientWidth;
+        if (width <= 500) {
+          menuVisible.value = false;
+        } else {
+          menuVisible.value = true;
+        }
+        console.log("窗口改变:" + menuVisible.value + ",width:" + width);
+      };
     });
   },
 };
