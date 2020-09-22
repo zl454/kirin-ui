@@ -1,6 +1,6 @@
 <template>
 <h1>对话框</h1>
-<p>kylin-dialog 对话框用于提示用户作出一些决定，或者是完成某个任务时需要的一些其它额外的信息。</p>
+<p>kylin-dialog 对话框组件。</p>
 <Demo :component="Dialog1Demo" />
 <Demo :component="Dialog2Demo" />
 <h2 class="props">Button props</h2>

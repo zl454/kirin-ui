@@ -1,7 +1,7 @@
 <template>
 <div class="kylin-tabs">
-  <div class="kylin-tabs-nav" :class='{"kylin-tabs-center":center,"kylin-tabs-full-width":fullWidth}' ref="container">
-    <div class="kylin-tabs-nav-item" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index" :ref="el=>{if (t===selected) selectedItem =el}" @click="select(t)">{{t}}</div>
+  <div class="kylin-tabs-nav" :class='{"kylin-tabs-center":center,"kylin-tabs-full-width":fullWidth}' :style='{"background":color}' ref="container">
+    <div class="kylin-tabs-nav-item" :class='{selected:t===selected,"kylin-tabs-nav-item-full-width":fullWidth}' v-for="(t,index) in titles" :key="index" :ref="el=>{if (t===selected) selectedItem =el}" @click="select(t)">{{t}}</div>
     <div class="kylin-tabs-nav-indicator" ref="indicator"></div>
   </div>
   <div class="kylin-tabs-content">
@@ -21,6 +21,9 @@ import Tab from "./Tab.vue";
 export default {
   props: {
     selected: {
+      type: String,
+    },
+    color: {
       type: String,
     },
     center: {
@@ -81,35 +84,42 @@ export default {
 </script>
 
 <style lang="scss">
-$blue: #40a9ff;
-$color: #333;
+$blue: #2196f3;
+$white: #ffffff;
+$color: #a4e0fb;
 $border-color: #d9d9d9;
+$selected: #dbffff;
 
 .kylin-tabs {
   &-nav {
     position: relative;
     display: flex;
+    background: #2196f3;
     color: $color;
-    border-bottom: 1px solid $border-color;
+    // border-bottom: 1px solid $border-color;
 
     &-item {
-      padding: 8px 0;
-      margin: 0 16px;
+      padding: 8px 16px;
+      text-align: center;
+      // margin: 0 16px;
       cursor: pointer;
 
-      &:first-child {
-        margin-left: 0;
+      // &:first-child {
+      //   margin-left: 0;
+      // }
+      &-full-width {
+        flex: 1;
       }
 
       &.selected {
-        color: $blue;
+        color: $selected;
       }
     }
 
     &-indicator {
       position: absolute;
       height: 3px;
-      background: $blue;
+      background: #ff4081;
       left: 0;
       bottom: -1px;
       width: 100px;
@@ -126,7 +136,9 @@ $border-color: #d9d9d9;
   }
 
   &-content {
-    padding: 8px 0;
+    padding: 16px;
+    background: $white;
+    line-height: 1.2;
   }
 }
 </style>

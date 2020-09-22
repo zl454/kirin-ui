@@ -1,9 +1,10 @@
 <template>
 <h1>选项卡</h1>
-<p>kylin-tabs 使在不同的视图和功能间探索和切换以及浏览不同类别的数据集合起来变得简单。</p>
+<p>kylin-tabs 选项卡切换组件</p>
 <Demo :component="Tabs1Demo" />
 <Demo :component="Tabs2Demo" />
 <Demo :component="Tabs3Demo" />
+<Demo :component="Tabs4Demo" />
 <h2 class="props">Button props</h2>
 <table class="kylin-table">
   <thead>
@@ -21,6 +22,12 @@
       <td>kylin-tab 是否居中显示</td>
       <td>boolean</td>
       <td>false</td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>颜色</td>
+      <td>string</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>v-model:selected</td>
@@ -43,6 +50,7 @@ import Demo from "../Demo.vue";
 import Tabs1Demo from "./Tabs1.demo.vue";
 import Tabs2Demo from "./Tabs2.demo.vue";
 import Tabs3Demo from "./Tabs3.demo.vue";
+import Tabs4Demo from "./Tabs4.demo.vue";
 export default {
   components: {
     Demo,
@@ -52,6 +60,7 @@ export default {
       Tabs1Demo,
       Tabs2Demo,
       Tabs3Demo,
+      Tabs4Demo,
     };
   },
 };
