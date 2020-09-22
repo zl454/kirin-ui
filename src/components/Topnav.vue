@@ -4,7 +4,7 @@
   <ul class="menu" :class="menuBool?'moobile-menu':''">
     <li class="search"><input type="search" @keyup="getSearchList" @focus="showList">
       <ul class="search-list">
-        <li v-for="(item,index) in lists" :key="index">
+        <li v-for="(item,index) in searchList" :key="index">
           <router-link :to="{path:item.path}" @click="hiddenList">{{item.name}}</router-link>
         </li>
       </ul>
@@ -36,29 +36,28 @@ import {
   Ref
 } from "vue";
 export default {
-  data() {
-    return {
-      lists: [{
-          name: "Switch",
-          path: "/doc/switch",
-        },
-        {
-          name: "button",
-          path: "/doc/button",
-        },
-        {
-          name: "dialog",
-          path: "/doc/dialog",
-        },
-        {
-          name: "tabs",
-          path: "/doc/tabs",
-        },
-      ],
-    };
-  },
-  methods: {
-    showList: () => {
+  setup() {
+    //初始搜索列表
+    const lists = [{
+        name: "Switch",
+        path: "/doc/switch",
+      },
+      {
+        name: "button",
+        path: "/doc/button",
+      },
+      {
+        name: "dialog",
+        path: "/doc/dialog",
+      },
+      {
+        name: "tabs",
+        path: "/doc/tabs",
+      },
+    ];
+    const searchList = ref([]);
+    //显示列表
+    const showList = () => {
       const el = document.querySelector(".search-list") as HTMLElement;
       el.style.display = "block";
       document.addEventListener("click", (e) => {
@@ -70,13 +69,21 @@ export default {
           return;
         el.style.display = "none";
       });
-    },
-    hiddenList: (e) => {
+    };
+    //隐藏列表
+    const hiddenList = (e) => {
       (document.querySelector(".search-list") as HTMLElement).style.display =
         "none";
-    },
-  },
-  setup() {
+    };
+    //获取搜索列表
+    const getSearchList = (e) => {
+      if (!e.target.value) return (searchList.value = []);
+      searchList.value = lists.filter((item, index) => {
+        if (~item.name.toLowerCase().indexOf(e.target.value.toLowerCase())) {
+          return item;
+        }
+      });
+    };
     const menuVisible = inject < Ref < boolean >> ("menuVisible");
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
@@ -86,9 +93,7 @@ export default {
       menuBool.value = !menuBool.value;
     };
     let flag = false;
-    const getSearchList = (e) => {
-      console.log(e.target.value);
-    };
+
     const menuShow = onMounted(() => {
       document.addEventListener("click", (e) => {
         if (
@@ -107,6 +112,10 @@ export default {
       });
     });
     return {
+      searchList,
+      showList,
+      hiddenList,
+      lists,
       getSearchList,
       menuBool,
       openHomeMenu,
