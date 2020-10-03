@@ -3,11 +3,11 @@
 推荐使用 `npm` 的方式安装，以便更好的和打包工具([webpack](https://webpack.js.org/))配合使用
 打开终端运行下列命令：  
 ```
-npm install kylin-ui -S
+npm install kylin-ui-1 -S
 ```
 或  
 ```
-yarn add kylin-ui
+yarn add kylin-ui-1
 ```
 
 下一节：<a href="#/doc/get-start">开始使用</a>
