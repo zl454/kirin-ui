@@ -127,3 +127,8 @@ declare module '*vue' {
 ### 9、适配手机样式
 ### 10、侧边栏路由间组件切换
 ### 11、官网完成
+
+## NPM
+### 查询当前的 NPM 源
+> npm config get registry
+### 
