@@ -1,11 +1,11 @@
 {
-  "name": "kylin-ui-1",
+  "name": "kirin-ui-1",
   "version": "0.0.3",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/kylin.js",
-  "module": "dist/lib/kylin.esm.js",
+  "main": "dist/lib/kirin.js",
+  "module": "dist/lib/kirin.esm.js",
   "license": "ISC",
   "scripts": {
     "dev": "vite",

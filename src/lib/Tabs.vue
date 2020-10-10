@@ -1,10 +1,10 @@
 <template>
-<div class="kylin-tabs">
-  <div class="kylin-tabs-nav" :class='{"kylin-tabs-center":center,"kylin-tabs-full-width":fullWidth}' :style='{"background":color}' ref="container">
-    <div class="kylin-tabs-nav-item" :class='{selected:t===selected,"kylin-tabs-nav-item-full-width":fullWidth}' v-for="(t,index) in titles" :key="index" :ref="el=>{if (t===selected) selectedItem =el}" @click="select(t)">{{t}}</div>
-    <div class="kylin-tabs-nav-indicator" ref="indicator"></div>
+<div class="kirin-tabs">
+  <div class="kirin-tabs-nav" :class='{"kirin-tabs-center":center,"kirin-tabs-full-width":fullWidth}' :style='{"background":color}' ref="container">
+    <div class="kirin-tabs-nav-item" :class='{selected:t===selected,"kirin-tabs-nav-item-full-width":fullWidth}' v-for="(t,index) in titles" :key="index" :ref="el=>{if (t===selected) selectedItem =el}" @click="select(t)">{{t}}</div>
+    <div class="kirin-tabs-nav-indicator" ref="indicator"></div>
   </div>
-  <div class="kylin-tabs-content">
+  <div class="kirin-tabs-content">
     <component :is="current" :key="current.props.title" />
   </div>
 </div>
@@ -94,7 +94,7 @@ $color: #a4e0fb;
 $border-color: #d9d9d9;
 $selected: #dbffff;
 
-.kylin-tabs {
+.kirin-tabs {
   &-nav {
     position: relative;
     display: flex;

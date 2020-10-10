@@ -1,12 +1,12 @@
 <template>
 <template v-if="visible">
   <Teleport to="body">
-    <div class="kylin-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="kylin-dialog-wrapper">
-      <div class="kylin-dialog">
+    <div class="kirin-dialog-overlay" @click="onClickOverlay"></div>
+    <div class="kirin-dialog-wrapper">
+      <div class="kirin-dialog">
         <header>
           <slot name="title" />
-          <span @click="close" class="kylin-dialog-close"></span>
+          <span @click="close" class="kirin-dialog-close"></span>
         </header>
         <main>
           <slot name="content" />
@@ -75,7 +75,7 @@ export default {
 $radius: 4px;
 $border-color: #d9d9d9;
 
-.kylin-dialog {
+.kirin-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);

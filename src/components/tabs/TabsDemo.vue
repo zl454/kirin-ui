@@ -1,48 +1,48 @@
 <template>
-<h1>选项卡</h1>
-<p>kylin-tabs 选项卡切换组件</p>
-<Demo :component="Tabs1Demo" />
-<Demo :component="Tabs2Demo" />
-<Demo :component="Tabs3Demo" />
-<Demo :component="Tabs4Demo" />
-<h2 class="props">Button props</h2>
-<table class="kylin-table">
-  <thead>
-    <tr>
-      <th>参数</th>
-      <th>说明</th>
-      <th>类型</th>
-      <th>默认值</th>
-    </tr>
-  </thead>
-  <tbody>
+  <h1>选项卡</h1>
+  <p>kirin-tabs 选项卡切换组件</p>
+  <Demo :component="Tabs1Demo" />
+  <Demo :component="Tabs2Demo" />
+  <Demo :component="Tabs3Demo" />
+  <Demo :component="Tabs4Demo" />
+  <h2 class="props">Button props</h2>
+  <table class="kirin-table">
+    <thead>
+      <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+      </tr>
+    </thead>
+    <tbody>
 
-    <tr>
-      <td>center</td>
-      <td>kylin-tab 是否居中显示</td>
-      <td>boolean</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>color</td>
-      <td>颜色</td>
-      <td>string</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>v-model:selected</td>
-      <td>用于控制 kylin-tab 的激活状态</td>
-      <td>-</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>full-width</td>
-      <td>是否自动适应父元素宽度</td>
-      <td>boolean</td>
-      <td>false</td>
-    </tr>
-  </tbody>
-</table>
+      <tr>
+        <td>center</td>
+        <td>kirin-tab 是否居中显示</td>
+        <td>boolean</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>颜色</td>
+        <td>string</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>v-model:selected</td>
+        <td>用于控制 kirin-tab 的激活状态</td>
+        <td>-</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>full-width</td>
+        <td>是否自动适应父元素宽度</td>
+        <td>boolean</td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script lang="ts">
@@ -103,8 +103,8 @@ table {
     display: table-header-group;
     vertical-align: middle;
 
-    >tr {
-      >th {
+    > tr {
+      > th {
         padding-left: 24px;
         padding-right: 24px;
         text-align: left;
@@ -118,8 +118,8 @@ table {
   }
 
   tbody {
-    >tr {
-      >td {
+    > tr {
+      > td {
         height: 48px;
         text-overflow: ellipsis;
         padding-left: 24px;

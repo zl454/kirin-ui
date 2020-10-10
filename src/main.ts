@@ -1,5 +1,5 @@
 import './index.scss'
-import './lib/kylin.scss'
+import './lib/kirin.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'

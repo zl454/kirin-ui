@@ -10,8 +10,8 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Kylin',
-    file: 'dist/lib/kylin.js',
+    name: 'kirin',
+    file: 'dist/lib/kirin.js',
     format: 'umd',
     plugins: [terser()]
   },

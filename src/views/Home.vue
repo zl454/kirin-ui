@@ -4,7 +4,7 @@
   <main class="home">
     <header class="banner">
       <img src="../images/logo.png" alt="">
-      <h1>Kylin-UI</h1>
+      <h1>Kirin-UI</h1>
       <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
       <p class="actions">
         <a href="https://github.com/zl454" target="_blank">GitHub</a>
@@ -22,7 +22,7 @@
       </div>
       <div class="feature">
         <h2>可定制</h2>
-        <p>Kylin UI 自定义主题方式极为优雅，仅需少量代码即可完成主题样式替换</p>
+        <p>Kirin UI 自定义主题方式极为优雅，仅需少量代码即可完成主题样式替换</p>
       </div>
     </div>
     <footer>

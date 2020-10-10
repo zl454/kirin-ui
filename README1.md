@@ -1,4 +1,4 @@
-# kylin-ui组件库
+# kirin-ui组件库
 
 ##  一、环境搭建
 
@@ -30,7 +30,7 @@
 
 #### 创建项目
 
-> `cva kylin-ui` 或者 `create-vite-app kylin-ui`  
+> `cva kirin-ui` 或者 `create-vite-app kirin-ui`  
 
 #### 进入项目目录，初始化项目
 

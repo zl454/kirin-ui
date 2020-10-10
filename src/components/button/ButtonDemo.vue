@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>按钮</h1>
-  <p>kylin-button 按钮组件，可以定制不同的颜色或者样式来替换标准的 html 按钮</p>
+  <p>kirin-button 按钮组件，可以定制不同的颜色或者样式来替换标准的 html 按钮</p>
   <Demo :component="Button1Demo" />
   <Demo :component="Button2Demo" />
   <Demo :component="Button3Demo" />
@@ -9,7 +9,7 @@
   <Demo :component="Button5Demo" />
 
   <h2 class="props">Button props</h2>
-  <table class="kylin-table">
+  <table class="kirin-table">
     <thead>
       <tr>
         <th>参数</th>

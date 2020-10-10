@@ -1,14 +1,12 @@
 <template>
-  <button
-    class="kylin-switch"
-    :class="[{'kylin-value':value},classes]"
-    @click="toggle"
-    :disabled="disabled"
-  ><span></span></button>
+<button class="kirin-switch" :class="[{'kirin-value':value},classes]" @click="toggle" :disabled="disabled"><span></span></button>
 </template>
 
 <script lang="ts">
-import { computed, ref } from "vue";
+import {
+  computed,
+  ref
+} from "vue";
 export default {
   props: {
     size: {
@@ -29,15 +27,18 @@ export default {
     },
   },
   setup(props, context) {
-    const { size, level } = props;
+    const {
+      size,
+      level
+    } = props;
     const toggle = () => {
       // checked 开关选中状态事件
       context.emit("update:value", !props.value);
     };
     const classes = computed(() => {
       return {
-        [`kylin-size-${size}`]: size,
-        [`kylin-level-${level}`]: level,
+        [`kirin-size-${size}`]: size,
+        [`kirin-level-${level}`]: level,
       };
     });
     return {
@@ -51,16 +52,16 @@ export default {
 <style lang="scss">
 $grey: rgb(112, 112, 112);
 
-.kylin-switch {
+.kirin-switch {
   border: none;
   background: gray;
   position: relative;
 
-  & + & {
+  &+& {
     margin-left: 8px;
   }
 
-  > span {
+  >span {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -69,7 +70,7 @@ $grey: rgb(112, 112, 112);
     transition: left 250ms;
   }
 
-  &.kylin-value {
+  &.kirin-value {
     background: blue;
   }
 
@@ -83,24 +84,24 @@ $grey: rgb(112, 112, 112);
     width: $h * 2;
     border-radius: $h/2;
 
-    > span {
+    >span {
       height: $h2;
       width: $h2;
       border-radius: $h2/2;
     }
 
-    &.kylin-value > span {
+    &.kirin-value>span {
       left: calc(100% - #{$h2} - 2px);
     }
 
     &:active {
-      > span {
+      >span {
         width: $h2 + 4px;
       }
     }
 
-    &.kylin-value:active {
-      > span {
+    &.kirin-value:active {
+      >span {
         width: $h2 + 4px;
         margin-left: -4px;
       }
@@ -110,26 +111,26 @@ $grey: rgb(112, 112, 112);
       cursor: not-allowed;
       background: rgba(128, 128, 128, 0.3);
 
-      &:active > span {
+      &:active>span {
         left: 2px;
         width: $h2;
       }
     }
 
-    &.kylin-size-big {
+    &.kirin-size-big {
       $h: 44px;
     }
   }
 
-  &.kylin-size-normal {
+  &.kirin-size-normal {
     @include switchSize(22px);
   }
 
-  &.kylin-size-small {
+  &.kirin-size-small {
     @include switchSize(16px);
   }
 
-  &.kylin-size-big {
+  &.kirin-size-big {
     @include switchSize(36px);
   }
 }

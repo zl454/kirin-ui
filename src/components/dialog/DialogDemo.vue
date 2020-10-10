@@ -1,10 +1,10 @@
 <template>
 <h1>对话框</h1>
-<p>kylin-dialog 对话框组件。</p>
+<p>kirin-dialog 对话框组件。</p>
 <Demo :component="Dialog1Demo" />
 <Demo :component="Dialog2Demo" />
 <h2 class="props">Button props</h2>
-<table class="kylin-table">
+<table class="kirin-table">
   <thead>
     <tr>
       <th>参数</th>

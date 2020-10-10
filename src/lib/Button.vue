@@ -1,14 +1,19 @@
 <template>
-<button class="kylin-button" :class="classes" :disabled="disabled">
-  <span v-if="loading" class="kylin-loadingIndicator"></span>
-  <slot />
-</button>
+  <button
+    class="kirin-button"
+    :class="classes"
+    :disabled="disabled"
+  >
+    <span
+      v-if="loading"
+      class="kirin-loadingIndicator"
+    ></span>
+    <slot />
+  </button>
 </template>
 
 <script>
-import {
-  computed
-} from "vue";
+import { computed } from "vue";
 export default {
   props: {
     theme: {
@@ -33,16 +38,12 @@ export default {
     },
   },
   setup(props) {
-    const {
-      theme,
-      size,
-      level
-    } = props;
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
-        [`kylin-theme-${theme}`]: theme,
-        [`kylin-size-${size}`]: size,
-        [`kylin-level-${level}`]: level,
+        [`kirin-theme-${theme}`]: theme,
+        [`kirin-size-${size}`]: size,
+        [`kirin-level-${level}`]: level,
       };
     });
     return {
@@ -61,7 +62,7 @@ $radius: 4px;
 $red: red;
 $grey: grey;
 
-.kylin-button {
+.kirin-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -77,7 +78,7 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
 
-  &+& {
+  & + & {
     margin-left: 8px;
   }
 
@@ -95,7 +96,7 @@ $grey: grey;
     border: 0;
   }
 
-  &.kylin-theme-link {
+  &.kirin-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -106,7 +107,7 @@ $grey: grey;
     }
   }
 
-  &.kylin-theme-text {
+  &.kirin-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -117,20 +118,20 @@ $grey: grey;
     }
   }
 
-  &.kylin-size-big {
+  &.kirin-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
 
-  &.kylin-size-small {
+  &.kirin-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
 
-  &.kylin-theme-button {
-    &.kylin-level-main {
+  &.kirin-theme-button {
+    &.kirin-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -142,7 +143,7 @@ $grey: grey;
       }
     }
 
-    &.kylin-level-danger {
+    &.kirin-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -155,8 +156,8 @@ $grey: grey;
     }
   }
 
-  &.kylin-theme-link {
-    &.kylin-level-danger {
+  &.kirin-theme-link {
+    &.kirin-level-danger {
       color: $red;
 
       &:hover,
@@ -166,8 +167,8 @@ $grey: grey;
     }
   }
 
-  &.kylin-theme-text {
-    &.kylin-level-main {
+  &.kirin-theme-text {
+    &.kirin-level-main {
       color: $blue;
 
       &:hover,
@@ -176,7 +177,7 @@ $grey: grey;
       }
     }
 
-    &.kylin-level-danger {
+    &.kirin-level-danger {
       color: $red;
 
       &:hover,
@@ -186,7 +187,7 @@ $grey: grey;
     }
   }
 
-  &.kylin-theme-button {
+  &.kirin-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -197,15 +198,15 @@ $grey: grey;
     }
   }
 
-  &.kylin-theme-link,
-  &.kylin-theme-text {
+  &.kirin-theme-link,
+  &.kirin-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  >.kylin-loadingIndicator {
+  > .kirin-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -214,11 +215,11 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: kylin-spin 1s infinite linear;
+    animation: kirin-spin 1s infinite linear;
   }
 }
 
-@keyframes kylin-spin {
+@keyframes kirin-spin {
   0% {
     transform: rotate(0deg);
   }
