@@ -2,7 +2,7 @@
 <div class="topnav">
   <router-link to="/" class="logo"><img src="../images/logo-name.png" alt=""></router-link>
   <ul class="menu" :class="menuBool?'moobile-menu':''">
-    <li class="search"><input type="search" @keyup="getSearchList" @focus="showList">
+    <li class="search"><input type="search" @keyup="getSearchList">
       <ul class="search-list">
         <li v-for="(item,index) in searchList" :key="index">
           <router-link :to="{path:item.path}" @click="hiddenList">{{item.name}}</router-link>
@@ -83,6 +83,7 @@ export default {
           return item;
         }
       });
+      showList();
     };
     const menuVisible = inject < Ref < boolean >> ("menuVisible");
     const toggleMenu = () => {
