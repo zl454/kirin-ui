@@ -4,7 +4,6 @@
   <main class="home">
     <header class="banner">
       <img src="../images/logo.png" alt="">
-      <h1>Kirin-UI</h1>
       <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
       <p class="actions">
         <a href="https://github.com/zl454" target="_blank">GitHub</a>
@@ -45,6 +44,7 @@ export default {
 .home {
   padding: 4rem 2rem 0;
   max-width: 960px;
+  min-height: calc(100vh-60px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -102,6 +102,7 @@ export default {
     padding: 2em;
     margin-top: 3rem;
     display: flex;
+    flex: auto;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -139,8 +140,8 @@ export default {
   }
 
   >footer {
-    flex-grow: 1;
-    padding: 1.5rem 0 0.5rem;
+    flex: 1;
+    padding: 1.5rem 0;
     border-top: 1px solid #eaecef;
     text-align: center;
     color: #4e6e8e;
