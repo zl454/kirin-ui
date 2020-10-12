@@ -16,7 +16,7 @@ import {Button, Tabs, Switch, Dialog} from "kirin-ui-1"
   </div>
 </template>
 <script>
-  import {Button, Tabs, Tab , Switch, Dialog , openDialog} from "king-ui-1"
+  import {Button, Tabs, Tab , Switch, Dialog , openDialog} from "kirin-ui"
   export default {
     components: {Button}
   }
