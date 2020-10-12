@@ -25,7 +25,7 @@
       </div>
     </div>
     <footer>
-      Copyright © 2020 by flynn
+      Copyright © 2020 by ZhangLin
     </footer>
   </main>
 </div>
@@ -44,7 +44,7 @@ export default {
 .home {
   padding: 4rem 2rem 0;
   max-width: 960px;
-  min-height: calc(100vh-60px);
+  height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -59,6 +59,7 @@ export default {
       max-width: 100%;
       // max-height: 280px;
       margin: 80px 0 70px;
+      user-select: none;
     }
 
     >h1 {
@@ -140,7 +141,6 @@ export default {
   }
 
   >footer {
-    flex: 1;
     padding: 1.5rem 0;
     border-top: 1px solid #eaecef;
     text-align: center;
