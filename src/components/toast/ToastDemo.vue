@@ -23,25 +23,6 @@
 </div>
 </template>
 
-<script>
-// import Demo from "../Demo.vue";
-// import Button1Demo from "./Button1.demo.vue"
-// export default {
-//   components: {
-//     Demo,
-//   },
-//   setup() {
-//     return {
-//       Button1Demo,
-//       Button2Demo,
-//       Button3Demo,
-//       Button4Demo,
-//       Button5Demo,
-//     };
-//   },
-// };
-</script>
-
 <style lang="scss" scoped>
 h1 {
   padding-bottom: 0.3em;
