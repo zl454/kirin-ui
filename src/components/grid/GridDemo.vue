@@ -1,46 +1,27 @@
 <template>
-  <div>
-    <h1>栅格布局</h1>
-    <p>kirin-grid 基于 flex box 布局设计的栅格布局</p>
-    <!--<Demo :component="Toast1Demo" />-->
+<div>
+  <h1>栅格布局</h1>
+  <p>kirin-grid 基于 flex box 布局设计的栅格布局</p>
+  <!--<Demo :component="Toast1Demo" />-->
 
-    <h2 class="props">Grid props</h2>
-    <table class="kirin-table">
-      <thead>
-        <tr>
-          <th>参数</th>
-          <th>说明</th>
-          <th>类型</th>
-          <th>默认值</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-    <!--<p>
+  <h2 class="props">Grid props</h2>
+  <table class="kirin-table">
+    <thead>
+      <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <!--<p>
     下一节：<a href="#/doc/dialog">Dialog 组件</a>
   </p>-->
-  </div>
+</div>
 </template>
-
-<script>
-// import Demo from "../Demo.vue";
-// import Button1Demo from "./Button1.demo.vue"
-// export default {
-//   components: {
-//     Demo,
-//   },
-//   setup() {
-//     return {
-//       Button1Demo,
-//       Button2Demo,
-//       Button3Demo,
-//       Button4Demo,
-//       Button5Demo,
-//     };
-//   },
-// };
-</script>
 
 <style lang="scss" scoped>
 h1 {
@@ -79,8 +60,8 @@ table {
     display: table-header-group;
     vertical-align: middle;
 
-    > tr {
-      > th {
+    >tr {
+      >th {
         padding-left: 24px;
         padding-right: 24px;
         text-align: left;
@@ -94,8 +75,8 @@ table {
   }
 
   tbody {
-    > tr {
-      > td {
+    >tr {
+      >td {
         height: 48px;
         text-overflow: ellipsis;
         padding-left: 24px;
