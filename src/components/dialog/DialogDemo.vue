@@ -3,7 +3,7 @@
 <p>kirin-dialog 对话框组件。</p>
 <Demo :component="Dialog1Demo" />
 <Demo :component="Dialog2Demo" />
-<h2 class="props">Button props</h2>
+<h2 class="props">Dialog props</h2>
 <table class="kirin-table">
   <thead>
     <tr>

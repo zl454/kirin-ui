@@ -1,54 +1,69 @@
 <template>
-  <div class="layout">
-    <Topnav class="nav" />
-    <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
-    </div>
-    <div class="content">
-      <aside v-if="menuVisible">
-        <ol>
-          <li>
-            <router-link to='/doc/introduce'>kirin-ui 简介</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/install'>安装指南</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/get-start'>开始使用</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/switch'>Switch</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/button'>Button</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/dialog'>Dialog</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/tabs'>Tabs</router-link>
-          </li>
-        </ol>
-      </aside>
-      <main>
-        <section>
-          <router-view></router-view>
-        </section>
-      </main>
-    </div>
+<div class="layout">
+  <Topnav class="nav" />
+  <div class="topnav">
+    <div class="logo"></div>
+    <div class="menu"></div>
   </div>
+  <div class="content">
+    <aside v-if="menuVisible">
+      <ol>
+        <li>
+          <router-link to='/doc/introduce'>kirin-ui 简介</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/install'>安装指南</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/get-start'>开始使用</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/switch'>Switch</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/button'>Button</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/dialog'>Dialog</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/tabs'>Tabs</router-link>
+        </li>
+        <li>
+          <router-link to='/doc/toast'><del>Toast 开发中</del></router-link>
+        </li>
+        <li>
+          <router-link to='/doc/menu'><del>Menu 开发中</del></router-link>
+        </li>
+        <li>
+          <router-link to='/doc/carousel'><del>Carousel 开发中</del></router-link>
+        </li>
+        <li>
+          <router-link to='/doc/grid'><del>Grid 开发中</del></router-link>
+        </li>
+      </ol>
+    </aside>
+    <main>
+      <section>
+        <router-view></router-view>
+      </section>
+    </main>
+  </div>
+</div>
 </template>
 
 <script lang="ts">
-import { inject, Ref } from "vue";
+import {
+  inject,
+  Ref
+} from "vue";
 import Topnav from "../components/Topnav.vue";
 export default {
   components: {
     Topnav,
   },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible");
+    const menuVisible = inject < Ref < boolean >> ("menuVisible");
     return {
       menuVisible,
     };
@@ -62,11 +77,11 @@ export default {
   flex-direction: column;
   height: 100vh;
 
-  > .nav {
+  >.nav {
     flex-shrink: 0;
   }
 
-  > .content {
+  >.content {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 255px;
@@ -80,16 +95,16 @@ export default {
 .content {
   display: flex;
 
-  > aside {
+  >aside {
     flex-shrink: 0;
   }
 
-  > main {
+  >main {
     flex-grow: 1;
     padding: 16px;
     background: #fff;
 
-    > section {
+    >section {
       margin: 20px auto;
       max-width: 912px;
     }
@@ -109,12 +124,12 @@ aside {
   box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
     0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 
-  > h2 {
+  >h2 {
     margin-bottom: 4px;
   }
 
-  > ol {
-    > li {
+  >ol {
+    >li {
       a {
         display: block;
         padding: 8px 16px;

@@ -5,6 +5,10 @@ import SwitchDemo from "./components/switch/SwitchDemo.vue"
 import ButtonDemo from "./components/button/ButtonDemo.vue"
 import DialogDemo from "./components/dialog/DialogDemo.vue"
 import TabsDemo from "./components/tabs/TabsDemo.vue"
+import MenuDemo from "./components/menu/MenuDemo.vue"
+import ToastDemo from "./components/toast/ToastDemo.vue"
+import GridDemo from "./components/grid/GridDemo.vue"
+import CarouselDemo from "./components/carousel/CarouselDemo.vue"
 import Markdown from "./components/Markdown.vue"
 import install from './markdown/install.md'
 import getStart from './markdown/get-start.md'
@@ -26,7 +30,11 @@ export const router = createRouter({
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
         { path: 'dialog', component: DialogDemo },
-        { path: 'tabs', component: TabsDemo }
+        { path: 'tabs', component: TabsDemo },
+        { path: 'menu', component: MenuDemo },
+        { path: 'toast', component: ToastDemo },
+        { path: 'grid', component: GridDemo },
+        { path: 'carousel', component: CarouselDemo },
       ]
     }
   ]
