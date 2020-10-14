@@ -1,19 +1,14 @@
 <template>
-  <button
-    class="kirin-button"
-    :class="classes"
-    :disabled="disabled"
-  >
-    <span
-      v-if="loading"
-      class="kirin-loadingIndicator"
-    ></span>
-    <slot />
-  </button>
+<button class="kirin-button" :class="classes" :disabled="disabled">
+  <span v-if="loading" class="kirin-loadingIndicator"></span>
+  <slot />
+</button>
 </template>
 
 <script>
-import { computed } from "vue";
+import {
+  computed
+} from "vue";
 export default {
   props: {
     theme: {
@@ -38,7 +33,11 @@ export default {
     },
   },
   setup(props) {
-    const { theme, size, level } = props;
+    const {
+      theme,
+      size,
+      level
+    } = props;
     const classes = computed(() => {
       return {
         [`kirin-theme-${theme}`]: theme,
@@ -65,6 +64,7 @@ $grey: grey;
 .kirin-button {
   box-sizing: border-box;
   height: $h;
+  margin: 6px 0;
   padding: 0 12px;
   cursor: pointer;
   display: inline-flex;
@@ -78,7 +78,7 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
 
-  & + & {
+  &+& {
     margin-left: 8px;
   }
 
@@ -206,7 +206,7 @@ $grey: grey;
     }
   }
 
-  > .kirin-loadingIndicator {
+  >.kirin-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
