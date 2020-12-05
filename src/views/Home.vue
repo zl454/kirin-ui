@@ -1,34 +1,32 @@
 <template>
-<div class="body">
-  <Topnav />
-  <main class="home">
-    <header class="banner">
-      <img src="../images/logo.png" alt="">
-      <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
-      <p class="actions">
-        <a href="https://github.com/zl454" target="_blank">GitHub</a>
-        <router-link to="/doc">get start →</router-link>
-      </p>
-    </header>
-    <div class="features">
-      <div class="feature">
-        <h2>简明优先</h2>
-        <p>极简化设计，注重内部功能实现。</p>
+  <div class="body">
+    <Topnav />
+    <main class="home">
+      <header class="banner">
+        <img src="../images/logo.png" alt="" />
+        <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
+        <p class="actions">
+          <a href="https://github.com/zl454" target="_blank">GitHub</a>
+          <router-link to="/doc">开始使用</router-link>
+        </p>
+      </header>
+      <div class="features">
+        <div class="feature">
+          <h2>简明优先</h2>
+          <p>极简化设计，注重内部功能实现。</p>
+        </div>
+        <div class="feature">
+          <h2>Vue3 驱动</h2>
+          <p>一款基于 Vue3 的 UI 组件库，api友好，可用于开发的复杂单页面应用</p>
+        </div>
+        <div class="feature">
+          <h2>可定制</h2>
+          <p>Kirin UI 自定义主题方式极为优雅，仅需少量代码即可完成主题样式替换</p>
+        </div>
       </div>
-      <div class="feature">
-        <h2>Vue3 驱动</h2>
-        <p>一款基于 Vue3 的 UI 组件库，api友好，可用于开发的复杂单页面应用</p>
-      </div>
-      <div class="feature">
-        <h2>可定制</h2>
-        <p>Kirin UI 自定义主题方式极为优雅，仅需少量代码即可完成主题样式替换</p>
-      </div>
-    </div>
-    <footer>
-      Copyright © 2020 by ZhangLin
-    </footer>
-  </main>
-</div>
+      <footer>Copyright © 2020 by ZhangLin</footer>
+    </main>
+  </div>
 </template>
 
 <script lang="ts">
@@ -49,26 +47,26 @@ export default {
   display: flex;
   flex-direction: column;
 
-  >header {
+  > header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    >img {
+    > img {
       max-width: 100%;
       // max-height: 280px;
       margin: 80px 0 70px;
       user-select: none;
     }
 
-    >h1 {
+    > h1 {
       font-size: 3rem;
       margin: 0.5rem 0;
       font-weight: bold;
     }
 
-    >.description {
+    > .description {
       font-size: 1.6rem;
       max-width: 35rem;
       text-align: center;
@@ -76,7 +74,7 @@ export default {
       margin: 1rem 0;
     }
 
-    >.actions {
+    > .actions {
       padding: 8px 0;
 
       a {
@@ -98,7 +96,7 @@ export default {
     }
   }
 
-  >.features {
+  > .features {
     border-top: 1px solid #eaecef;
     padding: 2em;
     margin-top: 3rem;
@@ -110,11 +108,11 @@ export default {
     align-items: flex-start;
     align-content: stretch;
 
-    >.feature {
+    > .feature {
       margin-bottom: 3rem;
 
       // flex-grow: 1;
-      >h2 {
+      > h2 {
         font-size: 1.4rem;
         font-weight: bold;
         line-height: 3rem;
@@ -124,7 +122,7 @@ export default {
         color: #3a5169;
       }
 
-      >p {
+      > p {
         color: #3a5169;
       }
     }
@@ -132,7 +130,7 @@ export default {
     @media (min-width: 800px) {
       flex-direction: row;
 
-      >.feature {
+      > .feature {
         flex-grow: 1;
         flex-basis: 30%;
         max-width: 30%;
@@ -140,7 +138,7 @@ export default {
     }
   }
 
-  >footer {
+  > footer {
     padding: 1.5rem 0;
     border-top: 1px solid #eaecef;
     text-align: center;
