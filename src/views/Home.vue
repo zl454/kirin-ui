@@ -6,7 +6,7 @@
         <img src="../images/logo.png" alt="" />
         <p class="description">一款基于 Vue3 和 TypeScript 开发的 UI 组件</p>
         <p class="actions">
-          <a href="https://github.com/zl454" target="_blank">GitHub</a>
+          <a style href="https://github.com/zl454" target="_blank">GitHub</a>
           <router-link to="/doc">开始使用</router-link>
         </p>
       </header>

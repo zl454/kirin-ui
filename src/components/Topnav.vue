@@ -143,7 +143,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 15;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #eaecef;
@@ -178,7 +178,7 @@ export default {
         right: 0;
         padding: 1rem 0;
         background: #ffffff;
-        z-index: 100;
+        z-index: 11;
         box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
           0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 
